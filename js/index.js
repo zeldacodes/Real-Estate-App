@@ -43,8 +43,28 @@ class ListingList{
 }
 
 const listings = new ListingList([]);
-const addButton = document.querySelector(".add-listing");
+const addButton = document.querySelector(".addButton");
 addButton.addEventListener("click", addListing);
+
+const searchInput = document.querySelector(".searchInput");
+const searchButton = document.querySelector(".searchButton");
+const sortButton = document.querySelector(".sortButton");
+
+// Search through the names of the listings
+searchButton.addEventListener("click", () => {
+  const query = searchInput.value.toLowerCase();
+  const searchFn = (b) => b.name.toLowerCase().includes(query);
+  listing.filterVisibleListings(searchFn);
+});
+
+searchButton.addEventListener("click", (e) => renderAllListings(searchListings(listingList)))
+sortButton.addEventListener("click", (e) => renderAllListings(sortListings(listingList)))
+
+const sortListings = (listings) => {
+    return listings.sort((a, b) => a.name < b.name ? -1 : 1);
+}
+
+
 
 renderApp();
 
