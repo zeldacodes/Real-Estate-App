@@ -19,6 +19,15 @@ body {
 
 h1 {
     margin-top: 5px;
+    padding-left: 10px;
+}
+
+form {
+    padding-left: 10px;
+}
+
+.input-name {
+    padding-left: 10px;
 }
 
 li {
