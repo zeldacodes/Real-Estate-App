@@ -67,10 +67,17 @@ sortButton.addEventListener("click", (e) => renderAllListings(sortListings(listi
 
 const sortListings = (listings) => {
     return listings.sort((a, b) => a.name < b.name ? -1 : 1);
+
+// work on this comment function in the morning
+// function addComment() {
+//     log.innerText = “Comment added”;
+//     event.preventDefault();
+//   }
+  
+//   const form = document.getElementById(“form”);
+//   const log = document.getElementById(“log”);
+//   form.addEventListener(“submit”, addComment);
 }
-
-
-
 renderApp();
 
 function addListing() {
