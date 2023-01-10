@@ -9,7 +9,7 @@ class Listing{
 
         const removeButton = document.createElement("button");
         removeButton.innerText = "-";
-        removeButton.addEventListener("click", () => {
+        removeButton.addEventListener("click", (e) => {
             this.listingList.removeListing(this);
             renderApp();
         });
@@ -31,6 +31,11 @@ class ListingList{
     addListing(listing){
         this.listings.push(listing);
     }
+    removeListing(listing){
+        const idx = this.listings.indexOf(listing);
+        if (idx !== -1) this.listings.splice(idx, 1);
+    }
+    
     render() {
     // All the individual Listings need to render
     const ul = document.createElement("ul");
